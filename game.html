@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        #game-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="game-container">
+        <h1>Guess the Number Game</h1>
+        <p>Guess a number between 1 and 100:</p>
+        <input type="number" id="guessInput" min="1" max="100">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <p id="message"></p>
+        <button onclick="resetGame()">Reset Game</button>
+    </div>
+
+    <script>
+        // Generate a random number between 1 and 100
+        const secretNumber = Math.floor(Math.random() * 100) + 1;
+
+        // Function to check the user's guess
+        function checkGuess() {
+            const userGuess = document.getElementById('guessInput').value;
+
+            if (userGuess == secretNumber) {
+                showMessage('Congratulations! You guessed the correct number.');
+            } else if (userGuess < secretNumber) {
+                showMessage('Too low. Try again.');
+            } else {
+                showMessage('Too high. Try again.');
+            }
+        }
+
+        // Function to display messages
+        function showMessage(message) {
+            document.getElementById('message').innerHTML = message;
+        }
+
+        // Function to reset the game
+        function resetGame() {
+            document.getElementById('guessInput').value = '';
+            document.getElementById('message').innerHTML = '';
+            // Generate a new random number for the next round
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+        }
+    </script>
+
+</body>
+
+</html>
