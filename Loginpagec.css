@@ -1,0 +1,31 @@
+
+.login{
+    text-align: center;
+    background-color:white;
+    width: 30%;
+    height: 744px;
+    border-radius: 1%;
+    border: 2px solid white;
+    margin-top:5px;
+    padding: 33px;
+    
+}
+
+h4{
+    padding-left: 300px;
+}
+h5{
+    text-align:center;
+   
+}
+
+body{
+    background-image: url(Image/photo-1579546929518-9e396f3cc809.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+label{
+    font-size: 50px;
+}
+
